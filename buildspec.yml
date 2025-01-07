@@ -36,7 +36,7 @@ reports:
     file-format: JUNITXML
   coverage-reports:
     files:
-      - '**/coverage-final.json'               
+      - '**/clover.xml'               
     base-directory: .
     discard-paths: yes           
-    file-format: JSON 
+    file-format: CLOVERXML 
