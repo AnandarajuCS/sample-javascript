@@ -33,4 +33,10 @@ reports:
       - '**/junit.xml'               
     base-directory: .
     discard-paths: yes           
-    file-format: JUNITXML 
+    file-format: JUNITXML
+  coverage-reports:
+    files:
+      - '**/coverage-final.json'               
+    base-directory: .
+    discard-paths: yes           
+    file-format: JSON 
