@@ -1,0 +1,23 @@
+{
+  "name": "@amzn/codebuild-sample-test-js-project",
+  "version": "1.0.0",
+  "description": "A simple Node.js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test-reports",
+          "outputName": "junit.xml"
+        }
+      ]
+    ]
+  },
+  "author": "Your Name",
+  "license": "M"
+}
