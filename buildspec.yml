@@ -22,12 +22,12 @@ phases:
       - echo 'Running JavaScript Tests'
       - echo $CODEBUILD_TOTAL_SHARDS
       - echo $CODEBUILD_CURRENT_SHARD
-      - echo $(codebuild-glob-search '**/test/*.js')
-      - codebuild-glob-search '**/test/*.js' | xargs -n 1 echo
+      - echo $(codebuild-glob-search '**/src/test/*.js')
+      - codebuild-glob-search '**/src/test/*.js' | xargs -n 1 echo
       - |
          codebuild-tests-run \
           --test-command 'npx jest --runInBand --coverage' \
-          --files-search "codebuild-glob-search '**/test/**/*.test.js'" \
+          --files-search "codebuild-glob-search '**/src/test/**/*.test.js'" \
           --sharding-strategy 'stability'
     post_build:
       commands:
