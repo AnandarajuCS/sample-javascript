@@ -23,7 +23,6 @@ phases:
       - echo $CODEBUILD_TOTAL_SHARDS
       - echo $CODEBUILD_CURRENT_SHARD
       - echo $(codebuild-glob-search '**/src/test/*.js')
-      - codebuild-glob-search '**/src/test/*.js' | xargs -n 1 echo
       - |
          codebuild-tests-run \
           --test-command 'npx jest --runInBand --coverage' \
