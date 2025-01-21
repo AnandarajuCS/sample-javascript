@@ -28,7 +28,7 @@ phases:
          codebuild-tests-run \
           --test-command 'npx jest --runInBand --coverage' \
           --files-search "codebuild-glob-search '**/src/test/**/*.test.js'" \
-          --sharding-strategy 'stability'
+          --sharding-strategy 'equal-distribution'
     post_build:
       commands:
         - echo 'Test execution completed'
