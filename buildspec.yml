@@ -1,7 +1,7 @@
 version: 0.2
 
 batch:
-  fast-fail: true
+  fast-fail: false
   build-fanout:
     parallelism: 4
     ignore-failure: false
@@ -27,7 +27,7 @@ phases:
          codebuild-tests-run \
           --test-command 'npx jest --runInBand --coverage' \
           --files-search "codebuild-glob-search '**/src/test/**/*.test.js'" \
-          --sharding-strategy 'equal-distribution' || exit 0 
+          --sharding-strategy 'equal-distribution' 
     post_build:
       commands:
         - echo 'Test execution completed'
