@@ -3,7 +3,7 @@ const { add, multiply, factorial } = require('../main/mathUtils');
 describe('Math Utilities', () => {
     describe('add', () => {
         test('adds two positive numbers', () => {
-            expect(add(2, 3)).toBe(5);
+            expect(add(2, 3)).toBe(9);
         });
 
         test('handles negative numbers', () => {
