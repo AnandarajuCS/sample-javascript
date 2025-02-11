@@ -44,8 +44,8 @@ reports:
     base-directory: 'coverage-reports'
     file-format: CLOVERXML 
 
-artifacts:
-  files:
-    - 'test-reports/**/*'
-    - 'coverage-reports/**/*'
-  name: build-reports-$(date +%Y-%m-%d)
+# artifacts:
+#   files:
+#     - 'test-reports/**/*'
+#     - 'coverage-reports/**/*'
+#   name: build-reports-$(date +%Y-%m-%d)
