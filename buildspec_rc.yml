@@ -19,8 +19,10 @@ phases:
       - echo 'Running JavaScript Tests'
       - echo $CODEBUILD_TOTAL_SHARDS
       - echo $CODEBUILD_CURRENT_SHARD
+      - echo "Printing all env vars"
+      - printenv
       - echo 'Sleeping for 5 mins'
-      - sleep 300
+      - sleep 600
       - echo 'Woke up after 5 mins'
       - echo $(codebuild-glob-search '**/src/test/*.js')
       - |
