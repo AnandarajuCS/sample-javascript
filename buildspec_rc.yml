@@ -1,0 +1,36 @@
+version: 0.2
+
+batch:
+  fast-fail: false
+  build-fanout:
+    parallelism: 4
+    ignore-failure: false
+    
+phases:
+  install:
+    commands:
+      - echo 'Installing Node.js dependencies'
+      - apt-get update
+      - apt-get install -y nodejs
+      - npm install
+      - npm install --save-dev jest-junit
+  pre_build:
+    commands:
+      - echo 'prebuild'
+  build:
+    commands:
+      - echo 'Running JavaScript Tests'
+      - echo $CODEBUILD_TOTAL_SHARDS
+      - echo $CODEBUILD_CURRENT_SHARD
+      - echo 'Sleeping for 5 mins'
+      - sleep 300
+      - echo 'Woke up after 5 mins'
+      - echo $(codebuild-glob-search '**/src/test/*.js')
+      - |
+         codebuild-tests-run \
+          --test-command 'npx jest --runInBand --coverage' \
+          --files-search "codebuild-glob-search '**/src/test/**/*.test.js'" \
+          --sharding-strategy 'equal-distribution' 
+    post_build:
+      commands:
+        - echo 'Test execution completed'
