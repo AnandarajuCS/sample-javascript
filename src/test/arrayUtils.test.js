@@ -3,7 +3,7 @@ const { unique, flatten, chunk } = require('../main/arrayUtils');
 describe('Array Utilities', () => {
     describe('unique', () => {
         test('removes duplicates from array', () => {
-            expect(unique([1, 2, 2, 3, 3, 4, 5])).toEqual([1, 2, 3, 4]);
+            expect(unique([1, 2, 2, 3, 3, 4])).toEqual([1, 2, 3, 4]);
         });
 
         test('handles empty array', () => {
