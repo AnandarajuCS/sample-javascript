@@ -30,3 +30,17 @@ phases:
     post_build:
       commands:
         - echo 'Test execution completed'
+
+reports:
+  test-reports:
+    files:
+      - '**/junit.xml'               
+    base-directory: .
+    discard-paths: yes           
+    file-format: JUNITXML
+  coverage-reports:
+    files:
+      - '**/clover.xml'               
+    base-directory: .
+    discard-paths: yes           
+    file-format: CLOVERXML 
