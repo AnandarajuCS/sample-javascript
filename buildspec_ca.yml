@@ -10,9 +10,9 @@ phases:
   install:
     commands:
       - echo 'Installing Node.js dependencies'
-      - apt-get update
-      - apt-get install -y nodejs
-      - npm install
+      # - apt-get update
+      # - apt-get install -y nodejs
+      # - npm install
       - npm install --save-dev jest-junit
   pre_build:
     commands:
