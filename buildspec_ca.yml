@@ -1,7 +1,7 @@
 version: 0.2
 
 batch:
-  fast-fail: true
+  fast-fail: false
   build-fanout:
     parallelism: 4
     ignore-failure: false
@@ -35,17 +35,17 @@ phases:
 reports:
   test-reports:
     files:
-      - '**/junit.xml'               
+      - '**/*'               
     base-directory: 'test-reports'
-    file-format: JUNITXML
+    file-format: JunitXml
   coverage-reports:
     files:
-      - '**/clover.xml'               
-    base-directory: 'coverage-reports'
+      - '**/*'               
+    base-directory: 'coverage'
     file-format: CLOVERXML 
 
-# artifacts:
-#   files:
-#     - 'test-reports/**/*'
-#     - 'coverage-reports/**/*'
-#   name: build-reports-$(date +%Y-%m-%d)
+artifacts:
+  files:
+    - 'test-reports/**/*'
+    - 'coverage/**/*'
+  name: build-reports-$(date +%Y-%m-%d)
